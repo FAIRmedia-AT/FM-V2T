@@ -1,10 +1,10 @@
 # FM-V2T Dataset: FAIRmedia English and German Video-to-Text (VTT) Annotations
 
 ## Overview
-This dataset has been developed by [**JOANNEUM RESEARCH DIGITAL**](https://www.joanneum.at/digital/) as part of a collaborative research project. It contains short video clips derived from publicly available video sources with detailed annotations in English and German which are designed for tasks involving video-to-text (VTT) modeling and evaluation. The video captions specifically focus on long video descriptions which are tailored to LLM-based VTT methods, solely relying on visual inputs.
+This dataset has been developed by [**JOANNEUM RESEARCH DIGITAL**](https://www.joanneum.at/digital/en/) as part of a collaborative research project. It contains short video clips derived from publicly available video sources with detailed annotations in English and German which are designed for tasks involving video-to-text (VTT) modeling and evaluation. The video captions specifically focus on long video descriptions which are tailored to LLM-based VTT methods, solely relying on visual inputs.
 
 ### Key Features
-1. **Clips**: 258 manually curated short video clips, typically under 30 seconds, extracted using the [VidiCerT](https://www.vidicert.com/) shot boundary detector.
+1. **Clips**: 258 manually curated short video clips, typically under 30 seconds, extracted using the [VidiCert](https://www.vidicert.com/) shot boundary detector.
    - **Average Length**: 15.45 seconds.
    - **Min Length**: 5.12 seconds.
    - **Max Length**: 34.92 seconds.
@@ -17,15 +17,7 @@ This dataset has been developed by [**JOANNEUM RESEARCH DIGITAL**](https://www.j
 3. **No Audio**: Audio tracks have been excluded to focus exclusively on visual content.
 4. **File Naming Convention**: `<CLIP_NR>_<VIDEO_NR>_<ID_FROM_URL>.ext` (e.g., `0_17_19F3A652-3AA-0032A-00000B64-19F2B6C5.webm`)
 
-## License
-This dataset is licensed under the **Creative Commons Attribution 4.0 International (CC BY 4.0)** license. 
 
-### Terms of Use
-By using this dataset, you agree to the following:
-1. Provide appropriate credit to [**JOANNEUM RESEARCH DIGITAL**](https://www.joanneum.at/digital/), link to the license, and indicate if changes were made.  
-2. Not imply endorsement by the original authors or contributors without permission.  
-
-For more details, see the full license text at [https://creativecommons.org/licenses/by/4.0/legalcode](https://creativecommons.org/licenses/by/4.0/legalcode).
 
 ## Directory Structure
 ```
@@ -58,7 +50,6 @@ FM-V2T/
     Here this is a example please also stay in this json format :
     {
         "video_id": "video8440",
-        "pred_caption": "Wrestler in yellow trunks dominates match, opponent in orange trunks is defeated.",
         "gold_caption": [
             "a man gives commentary over wrestling",
             "a man hits another man while wrestling",
@@ -97,7 +88,7 @@ FM-V2T/
 The [VideoDownloader.py](video_clips_metadata/VideoDownloader.py) script is included to facilitate the download of the original videos, utilizing the video URL information of the `Mediathek_WVR_Videos.xlsx` file.
 
 #### 2. Generate the Clips:
-After downloading the original videos, split them into short video clips using the `video_clips_cuts_info.csv` as a reference for shot boundaries and filenames.
+After downloading the original videos, split them into short video clips using the `video_clips_cuts_info.csv` as a reference for shot boundaries and filenames. For example, [FFmpeg](https://www.ffmpeg.org/) can be used for this purpose.
 Make sure to stick to the file naming convention described above.
 
 NOTE: Only a selected subset of clips was annotated. Clips with faulty shot boundaries or poor quality were excluded from the annotations.
@@ -128,6 +119,8 @@ For inquiries about this dataset, please reach out to:
 - [Werner Bailer](mailto:werner.bailer@joanneum.at)  
 - [Stefan Arzberger](mailto:stefan.arzberger@joanneum.at)  
 
+## License
+This dataset is licensed under the **Creative Commons Attribution 4.0 International (CC BY 4.0)** license. 
 
 ## Acknowledgement
 
