@@ -23,7 +23,6 @@ This dataset has been developed by [**JOANNEUM RESEARCH DIGITAL**](https://www.j
 ```
 FM-V2T/ 
 ├── README.md
-├── LICENSE
 ├── annotations/
 │ ├── clips-wvr-annotations-de.csv # German detailed annotations
 │ ├── clips-wvr-annotations-eng.csv # English detailed annotations
@@ -32,7 +31,6 @@ FM-V2T/
 │ ├── Mediathek_WVR_Videos.xlsx # Metadata including download URLs
 │ ├── VideoDownloader.py # Script for downloading original videos
 │ ├── video_clips_cuts_info.csv # Metadata on video clips
-├── img/ # Logos
 ```
 
 ## Annotation Details
