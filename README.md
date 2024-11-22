@@ -89,7 +89,7 @@ The [VideoDownloader.py](video_clips_metadata/VideoDownloader.py) script is incl
 After downloading the original videos, split them into short video clips using the `video_clips_cuts_info.csv` as a reference for shot boundaries and filenames. For example, [FFmpeg](https://www.ffmpeg.org/) can be used for this purpose.
 Make sure to stick to the file naming convention described above.
 
-NOTE: Only a selected subset of clips was annotated. Clips with faulty shot boundaries or poor quality were excluded from the annotations.
+NOTE: Only a selected subset of clips was annotated. Clips with faulty shot boundaries or poor quality were excluded of annoation candidates. Finally, only a single clip per original video was randomly sampled.
 
 ## Key Clips
 During our initial tests with LLM-based Video-to-Text methods, we identified key clips that highlight specific challenges or qualities useful for qualitative evaluation of different models:
