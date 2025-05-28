@@ -42,7 +42,7 @@ FM-V2T/
     ```
   - German translations produced using the [No Language Left Behind (NLLB)](https://ai.meta.com/research/no-language-left-behind/) model and manually refined.
 - **Summary Descriptions**:
-  - "gold_caption": 20 manually refined short captions created in the style of the [MSR-VTT](https://cove.thecvf.com/datasets/839) format, derived from detailed annotations using [ChatGPT](https://chatgpt.com/) with the prompt:
+  - "gold_caption": 21 manually refined short captions created in the style of the [MSR-VTT](https://cove.thecvf.com/datasets/839) format, derived from detailed annotations using [ChatGPT](https://chatgpt.com/) with the prompt:
     ```
     I will give you a video caption and you have to extract the most important information into a short 10 word description and make different variations of the "pred_caption". These "gold_caption" are variations of the "pred_caption" and have the same meaning and maybe focus on a few other details from the original video caption and are all formulated in other words but without inventing any other details that where not in the original video caption. So similar like in the MSR_VTT dataset. 
     Here this is a example please also stay in this json format :
