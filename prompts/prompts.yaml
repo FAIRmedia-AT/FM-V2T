@@ -1,0 +1,255 @@
+PROMPTS_LIB: [
+    # ---------------------------------------
+    # PAPER PROMPTS:
+    # Different description lengths prompted by word limits
+    # ---------------------------------------
+    {
+        paper_desc: Long-200,
+        id: 18,
+        language: en,
+        word_limit: 200,
+        intention: 'long detailed prompt, description in 200 words',
+        prompt_string: 'Describe this video, exactly and only focus on what is visible, without imagining any details that are not visable! Answer what can be seen, where the video was shot, what persons, animals or buildings etc. can be seen. What is happening in the video? When was the video filmed at day or night for example... Is there something unique to this video? Limit the description to 200 words!'
+    },
+    {
+        paper_desc: Medium-50,
+        id: 185,
+        language: en,
+        word_limit: 50,
+        intention: 'long detailed prompt, description in 50 words',
+        prompt_string: 'Describe the following in detail with a word limit of 50 words.'
+    },
+    {
+        paper_desc: Short-25,
+        id: 186,
+        language: en,
+        word_limit: 25,
+        intention: 'long detailed prompt, description in 25 words',
+        prompt_string: 'Describe the following in detail with a word limit of 25 words.'
+    },
+    {
+        paper_desc: Brief-10,
+        id: 100,
+        language: en,
+        word_limit: 10,
+        intention: 'short prompt description for MSR-VTT with examples, inspired by tarsier prompt',
+        prompt_string: 'Describe the video in a short sentence with simple words. Limit the response to 10 words! EXAMPLE sentences for inspiration of an example video are: ["a cartoon animals runs through an ice cave in a video game", "a cartoon character runs around inside of a video game", "a character is running in the snow", "a person plays a video game centered around ice age the movie", "a person plays online and records themselves", "a scene from the ice age video game is shown", "a video game character is jumping about in a cave", "a video game of a little animal running through an ice tunnel", "a video game of a small animal", "a video shows gameplay from ice age", "a weasel runs around in an icy cave", "an animal runs through an icy tunnel in a video game", "crash and eddie on an ice age video game", "gameplay footage of someone playing a game", "ice age video game main character walks around", "someone is playing a video game", "a weasel runs around in an icy cave", "a video game of a small animal", "a cartoon animals runs through an ice cave in a video game", "a cartoon character runs around inside of a video game"]'
+    },
+
+    # ---------------------------------------
+    # ADDITIONAL PROMPTS
+    # ---------------------------------------
+
+    {
+        id: 1,
+        language: en,
+        word_limit: 5,
+        intention: 'ultra short prompt, description in 5 words',
+        prompt_string: 'Describe the video in 5 words only!'
+    },
+    {
+        id: 2,
+        language: en,
+        word_limit: 10,
+        intention: 'describe detailed',
+        prompt_string: 'Describe the video in detail, limit the response to 10 words'
+    },
+    {
+        id: 3,
+        language: de,
+        word_limit: 20,
+        intention: 'describe superficial',
+        prompt_string: 'Beschriebe das Video im oberflächlich. Begrenze die Antwort auf 20 Wörter. Ausgabe in Deutsch!'
+    },
+    {
+        id: 4,
+        language: en,
+        word_limit: 40,
+        intention: 'AI should diescribe video wrong',
+        prompt_string: 'Do not describe the video correctly, only be inspired by it. Be creative, be immaginary, hallucinate, be fun! Fill in the blanks and dream! But limit your response to a maximum of 40 words!'
+    },
+    {
+        id: 5,
+        language: en,
+        word_limit: 60,
+        intention: 'describe as poem',
+        prompt_string: 'Here you can see a video, please make a poem that describes the action, scene, feeling and location of this video! Be creative and immaginary! It can be sad, fun or thought invoking for example. Limit your creation to 2 or 4 paragraphs'
+    },
+    {
+        id: 6,
+        language: en,
+        word_limit: 125,
+        intention: 'discribe as story',
+        prompt_string: 'Here you can see a video, please make a exciting short story that describes the action, scene, feeling and location of this video! Be creative and immaginary! It can be sad, fun or thought invoking for example. Limit your creation to 125 words!'
+    },
+    {
+        id: 7,
+        language: en,
+        word_limit: 10,
+        intention: 'ultra short prompt, description in 10 words',
+        prompt_string: 'Describe video in 10 words!'
+    },
+    {
+        id: 8,
+        language: en,
+        word_limit: 20,
+        intention: 'ultra short prompt, description in 20 words',
+        prompt_string: 'Describe video in 20 words!'
+    },
+    {
+        id: 9,
+        language: en,
+        word_limit: 50,
+        intention: 'ultra short prompt, description in 50 words',
+        prompt_string: 'Describe video in 50 words!'
+    },
+    {
+        id: 10,
+        language: en,
+        word_limit: 200,
+        intention: 'ultra short prompt, description in 200 words',
+        prompt_string: 'Describe video in 200 words!'
+    },
+    {
+        id: 11,
+        language: en,
+        word_limit: 10,
+        intention: 'short prompt, description in 10 words',
+        prompt_string: 'Describe this video exactly. Be precise and do NOT imagine any details that are not visable! Limit the description to 10 words!'
+    },
+    {
+        id: 12,
+        language: en,
+        word_limit: 20,
+        intention: 'short prompt, description in 20 words',
+        prompt_string: 'Describe this video exactly. Be precise and do NOT imagine any details that are not visable! Limit the description to 20 words!'
+    },
+    {
+        id: 13,
+        language: en,
+        word_limit: 50,
+        intention: 'short prompt, description in 50 words',
+        prompt_string: 'Describe this video exactly. Be precise and do NOT imagine any details that are not visable! Limit the description to 50 words!'
+    },
+    {
+        id: 14,
+        language: en,
+        word_limit: 200,
+        intention: 'short prompt, description in 200 words',
+        prompt_string: 'Describe this video exactly. Be precise and do NOT imagine any details that are not visable! Limit the description to 200 words!'
+    },
+    {
+        id: 15,
+        language: en,
+        word_limit: 10,
+        intention: 'long detailed prompt, description in 10 words',
+        prompt_string: 'Describe this video, exacltly and only focus on what is visible, without imaginating any details that are not visable! Answer what can be seen, where the video was shot, what persons, animals or buildings etc. can be seen. What is happening in the video? When was the video filmed at day or night for example... Is there something unique to this video? Limit the description to 10 words!'
+    },
+    {
+        id: 16,
+        language: en,
+        word_limit: 20,
+        intention: 'long detailed prompt, description in 20 words',
+        prompt_string: 'Describe this video, exactly and only focus on what is visible, without imagining any details that are not visable! Answer what can be seen, where the video was shot, what persons, animals or buildings etc. can be seen. What is happening in the video? When was the video filmed at day or night for example... Is there something unique to this video? Limit the description to 20 words!'
+    },
+    {
+        id: 17,
+        language: en,
+        word_limit: 50,
+        intention: 'long detailed prompt, description in 50 words',
+        prompt_string: 'Describe this video, exactly and only focus on what is visible, without imagining any details that are not visable! Answer what can be seen, where the video was shot, what persons, animals or buildings etc. can be seen. What is happening in the video? When was the video filmed at day or night for example... Is there something unique to this video? Limit the description to 50 words!'
+    },
+
+
+    {
+        id: 186,
+        language: en,
+        word_limit: 25,
+        intention: 'long detailed prompt, description in 25 words',
+        prompt_string: 'Describe the following in detail with a word limit of 25 words.'
+    },
+    {
+        id: 181,
+        language: en,
+        word_limit: 200,
+        intention: 'long detailed prompt, description in 200 words, medical',
+        prompt_string: "Describe this medical video by focusing only on what is visible, without inferring or imagining details not shown. Identify the surgical tools used, the specific body part or organ involved, and describe the medical actions or steps being performed. Mention any visible medical personnel and their roles. Describe the procedure's environment (e.g., operating room, equipment setup). If the time of day is discernible, mention it. Is there anything medically unique about this surgery? Limit the description to 200 words!"
+    },
+    {
+        id: 19,
+        language: en,
+        word_limit: 10,
+        intention: 'prompt in questions, description in 10 words',
+        prompt_string: 'What can you see in this video? What is happening? When is this video happening? Where is this video happening? Is there a unique person, animal, building or object? Limit your response to 10 words!'
+    },
+    {
+        id: 20,
+        language: en,
+        word_limit: 20,
+        intention: 'prompt in questions, description in 20 words',
+        prompt_string: 'What can you see in this video? What is happening? When is this video happening? Where is this video happening? Is there a unique person, animal, building or object? Limit your response to 20 words!'
+    },
+    {
+        id: 21,
+        language: en,
+        word_limit: 50,
+        intention: 'prompt in questions, description in 50 words',
+        prompt_string: 'What can you see in this video? What is happening? When is this video happening? Where is this video happening? Is there a unique person, animal, building or object? Limit your response to 50 words!'
+    },
+    {
+        id: 22,
+        language: en,
+        word_limit: 200,
+        intention: 'prompt in questions, description in 200 words',
+        prompt_string: 'What can you see in this video? What is happening? When is this video happening? Where is this video happening? Is there a unique person, animal, building or object? Limit your response to 200 words!'
+    },
+    {
+        id: 23,
+        language: en,
+        word_limit: 10,
+        intention: 'prompt in form of example, description in 10 words',
+        prompt_string: 'Describe the video in detail. Only the things visable, do not judge and do not imagine things that can not be seen. Your response should look like this, for example a video with a yellow car in a city, only 10 words. RESPONSE_EXAMPLE: A yellow car driving in a bustling city. As you can see short and precise, with no imagination of content.'
+    },
+    {
+        id: 24,
+        language: en,
+        word_limit: 100,
+        intention: 'prompt in form of example with variations like mrs-vtt, description in 200 words',
+        prompt_string: 'Describe the video in a short sentence with simple words and then make 9 other variations of your response which have THE SAME Meaning but in other words, so do not imagine new details in these. Limit each variation to 10 words! EXAMPLE for inspiration of an example video are, also look at the format so that it is really readable, so that each variation of the response is in quotes in form of a list like here: ["a cartoon animals runs through an ice cave in a video game", "a cartoon character runs around inside of a video game", "a character is running in the snow", "a person plays a video game centered around ice age the movie", "a person plays online and records themselves", "a scene from the ice age video game is shown", "a video game character is jumping about in a cave", "a video game of a little animal running through an ice tunnel", "a video game of a small animal", "a video shows gameplay from ice age", "a weasel runs around in an icy cave", "an animal runs through an icy tunnel in a video game", "crash and eddie on an ice age video game", "gameplay footage of someone playing a game", "ice age video game main character walks around", "someone is playing a video game", "a weasel runs around in an icy cave", "a video game of a small animal", "a cartoon animals runs through an ice cave in a video game", "a cartoon character runs around inside of a video game"]'
+    },
+    {
+        id: 25,
+        language: en,
+        word_limit: 100,
+        intention: 'prompt in form of example with variations like mrs-vtt but not specifing the format, description in 200 words',
+        prompt_string: 'Describe the video in a short sentence with simple words and then make 9 other variations of your response which have THE SAME Meaning but in other words, so do not imagine new details in these. Limit each variation to 10 words! EXAMPLE for inspiration of an example video are: ["a cartoon animals runs through an ice cave in a video game", "a cartoon character runs around inside of a video game", "a character is running in the snow", "a person plays a video game centered around ice age the movie", "a person plays online and records themselves", "a scene from the ice age video game is shown", "a video game character is jumping about in a cave", "a video game of a little animal running through an ice tunnel", "a video game of a small animal", "a video shows gameplay from ice age", "a weasel runs around in an icy cave", "an animal runs through an icy tunnel in a video game", "crash and eddie on an ice age video game", "gameplay footage of someone playing a game", "ice age video game main character walks around", "someone is playing a video game", "a weasel runs around in an icy cave", "a video game of a small animal", "a cartoon animals runs through an ice cave in a video game", "a cartoon character runs around inside of a video game"]'
+    },
+    {
+        id: 26,
+        language: de,
+        word_limit: 10,
+        intention: 'prompt auf deutsch antwort auf deutsch, in 10 worten',
+        prompt_string: 'Beschreibe das Video mit Deutscher Sprache genau, ohne etwas zu erfinden was nicht im Video zu sehen ist. Deine Antwort soll maximal 10 Wörter haben.'
+    },
+    {
+        id: 27,
+        language: de,
+        word_limit: 20,
+        intention: 'prompt auf deutsch antwort auf deutsch, in 20 worten',
+        prompt_string: 'Beschreibe das Video mit Deutscher Sprache genau, ohne etwas zu erfinden was nicht im Video zu sehen ist. Deine Antwort soll maximal 20 Wörter haben.'
+    },
+    {
+        id: 28,
+        language: de,
+        word_limit: 40,
+        intention: 'prompt auf deutsch antwort auf deutsch in form eines gedichts, in 3 strophen',
+        prompt_string: 'Beschreibe das Video mit Deuscher Sprache! Sei kreativ und verwende das Video nur als inspiration für ein tolles kreatives Gedicht! Dieses Gedicht soll maximal 3 Strophen haben!'
+    },
+    {
+        id: 101,
+        language: en,
+        word_limit: 10,
+        intention: 'short prompt description for MSR-VTT without examples, inspired by tarsier prompt',
+        prompt_string: 'Describe the video in a short sentence with simple words. Limit the response to 10 words!'
+    },
+]
