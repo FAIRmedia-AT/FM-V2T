@@ -1,0 +1,68 @@
+{
+    "reference_text": "A small airplane is flying across the sky, with a banner reading \"BUSSI SUSI-LEO\" trailing behind it.",
+    "prediction_text": "A small airplane is flying across the sky, with no banner reading \"BUSSI SUSI-LEO\" trailing behind it.",
+    "metrics": {
+      "counts_ref_to_pred": {
+        "entailment": 2,
+        "contradiction": 2,
+        "neutral": 0,
+        "total_facts": 4
+      },
+      "counts_pred_to_ref": {
+        "entailment": 2,
+        "contradiction": 1,
+        "neutral": 0,
+        "total_facts": 3
+      }
+    },
+    "alignment_facts(ref)_to_pred": {
+        "fact_relationships": [
+          {
+            "fact_index": 1,
+            "fact": "A small airplane is flying.",
+            "relationship": "entailment",
+            "reason": "The video description states that a small airplane is flying across the sky."
+          },
+          {
+            "fact_index": 2,
+            "fact": "The airplane is flying across the sky.",
+            "relationship": "entailment",
+            "reason": "The video description explicitly states that the airplane is flying across the sky."
+          },
+          {
+            "fact_index": 3,
+            "fact": "A banner is trailing behind the airplane.",
+            "relationship": "contradiction",
+            "reason": "The video description states that there is no banner trailing behind the airplane."
+          },
+          {
+            "fact_index": 4,
+            "fact": "The banner reads 'BUSSI SUSI-LEO'.",
+            "relationship": "contradiction",
+            "reason": "The video description states that there is no banner trailing behind the airplane, making the fact about the banner's content irrelevant."
+          }
+        ]
+      },
+      "alignment_facts(pred)_to_ref": {
+        "fact_relationships": [
+          {
+            "fact_index": 1,
+            "fact": "A small airplane is flying.",
+            "relationship": "entailment",
+            "reason": "The video description explicitly mentions a small airplane flying."
+          },
+          {
+            "fact_index": 2,
+            "fact": "The airplane is flying across the sky.",
+            "relationship": "entailment",
+            "reason": "The video description states the airplane is flying across the sky."
+          },
+          {
+            "fact_index": 3,
+            "fact": "There is no banner reading 'BUSSI SUSI-LEO' trailing behind the airplane.",
+            "relationship": "contradiction",
+            "reason": "The video description explicitly mentions a banner reading 'BUSSI SUSI-LEO' trailing behind the airplane."
+          }
+        ]
+      }
+}
