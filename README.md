@@ -1,7 +1,7 @@
-# FM-V2T Dataset: FAIRmedia English and German Video-to-Text (VTT) Annotations
+# FM-V2T Dataset: FAIRmedia English and German Video-to-Text (V2T) Annotations
 
 ## Overview
-This dataset has been developed by [**JOANNEUM RESEARCH DIGITAL**](https://www.joanneum.at/digital/en/) as part of a collaborative research project. It contains short video clips derived from publicly available video sources with detailed annotations in English and German which are designed for tasks involving video-to-text (VTT) modeling and evaluation. The video captions specifically focus on long video descriptions which are tailored to LLM-based VTT methods, solely relying on visual inputs.
+This dataset has been developed by [**JOANNEUM RESEARCH DIGITAL**](https://www.joanneum.at/digital/en/) as part of a collaborative research project. It contains short video clips derived from publicly available video sources with detailed annotations in English and German which are designed for tasks involving video-to-text (V2T) modeling and evaluation. The video captions specifically focus on long video descriptions which are tailored to LLM-based V2T methods, solely relying on visual inputs. For a brief video overview of the dataset creation process, visit the [**FAIRmedia**](https://www.joanneum.at/digital/projekte/fairmedia/) project website.
 
 ### Key Features
 1. **Clips**: 258 manually curated short video clips, typically under 30 seconds, extracted using the [VidiCert](https://www.vidicert.com/) shot boundary detector.
@@ -11,8 +11,8 @@ This dataset has been developed by [**JOANNEUM RESEARCH DIGITAL**](https://www.j
    - **Median Length**: 13.63 seconds.
    - **STD of Length**: 7.79 seconds.
 2. **Annotations**:
-   - **Detailed Long Descriptions**: Generated using the [VideoLLama2](https://github.com/DAMO-NLP-SG/Video-LLaMA) VTT model and manually corrected for quality.
-   - **Multiple Short Summary Descriptions**: Extracted 20 short single-sentence descriptions from detailed long descriptions using [ChatGPT](https://chatgpt.com/), formatted for [MSR-VTT](https://cove.thecvf.com/datasets/839) compatibility.
+   - **Detailed Long Descriptions**: Generated using the [VideoLLama2](https://github.com/DAMO-NLP-SG/Video-LLaMA) V2T model and manually corrected for quality.
+   - **Multiple Short Summary Descriptions**: Extracted 21 short single-sentence descriptions from detailed long descriptions using [ChatGPT](https://chatgpt.com/), formatted for [MSR-VTT](https://cove.thecvf.com/datasets/839) compatibility.
    - **Bilingual**: Long descriptions are available in English and German, with translations refined manually.
 3. **No Audio**: Audio tracks have been excluded to focus exclusively on visual content.
 4. **File Naming Convention**: `<CLIP_NR>_<VIDEO_NR>_<ID_FROM_URL>.ext` (e.g., `0_17_19F3A652-3AA-0032A-00000B64-19F2B6C5.webm`)
@@ -38,7 +38,7 @@ FM-V2T/
   - English descriptions generated using [VideoLLama2](https://github.com/DAMO-NLP-SG/Video-LLaMA) with a 200-word prompt:
     <!-- PromptID = 18 -->
     ```
-    Describe this video in detail, focus on what is visible. Limit the description to 200 words.
+    Describe this video, exactly and only focus on what is visible, without imagining any details that are not visible! Answer what can be seen, where the video was shot, what persons, animals or buildings etc. can be seen. What is happening in the video? When was the video filmed at day or night for example ... Is there something unique to this video? Limit the description to 200 words!
     ```
   - German translations produced using the [No Language Left Behind (NLLB)](https://ai.meta.com/research/no-language-left-behind/) model and manually refined.
 - **Summary Descriptions**:
