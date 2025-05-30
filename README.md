@@ -31,6 +31,10 @@ FM-V2T/
 │ ├── Mediathek_WVR_Videos.xlsx # Metadata including download URLs
 │ ├── VideoDownloader.py # Script for downloading original videos
 │ ├── video_clips_cuts_info.csv # Metadata on video clips
+├── PAPER/
+│ ├── prompts/ # Detailed Prompts used
+│ ├── qualitative_example_table3/ # Video used for metric validation
+│ ├── results_prompt_experiments/ # Interactive plots from initial prompt experiments
 ```
 
 ## Annotation Details
