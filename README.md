@@ -3,6 +3,13 @@
 ## Overview
 This dataset has been developed by [**JOANNEUM RESEARCH DIGITAL**](https://www.joanneum.at/digital/en/) as part of a collaborative research project. It contains short video clips derived from publicly available video sources with detailed annotations in English and German which are designed for tasks involving video-to-text (V2T) modeling and evaluation. The video captions specifically focus on long video descriptions which are tailored to LLM-based V2T methods, solely relying on visual inputs. For a brief video overview of the dataset creation process, visit the [**FAIRmedia**](https://www.joanneum.at/digital/projekte/fairmedia/) project website.
 
+## Publication: ACM Multimedia 2025
+The **FM-V2T Dataset** is published alongside our paper  
+[**A Dataset and Metric for Textual Video Content Description**](https://doi.org/10.1145/3746027.3758224),  
+appearing in the *Proceedings of the 33rd ACM International Conference on Multimedia (ACM MM 2025)*.
+
+This publication introduces both the dataset and a dedicated **LLM-based semantic correspondence metric** designed for evaluating video-to-text models.
+
 ### Key Features
 1. **Clips**: 258 manually curated short video clips, typically under 30 seconds, extracted using the [VidiCert](https://www.vidicert.com/) shot boundary detector.
    - **Average Length**: 15.45 seconds.
@@ -12,7 +19,7 @@ This dataset has been developed by [**JOANNEUM RESEARCH DIGITAL**](https://www.j
    - **STD of Length**: 7.79 seconds.
 2. **Annotations**:
    - **Detailed Long Descriptions**: Generated using the [VideoLLama2](https://github.com/DAMO-NLP-SG/Video-LLaMA) V2T model and manually corrected for quality.
-   - **Multiple Short Summary Descriptions**: Extracted 21 short single-sentence descriptions from detailed long descriptions using [ChatGPT](https://chatgpt.com/), formatted for [MSR-VTT](https://cove.thecvf.com/datasets/839) compatibility.
+   - **Multiple Short Summary Descriptions**: Extracted 20 short single-sentence descriptions from detailed long descriptions using [ChatGPT](https://chatgpt.com/), formatted for [MSR-VTT](https://cove.thecvf.com/datasets/839) compatibility.
    - **Bilingual**: Long descriptions are available in English and German, with translations refined manually.
 3. **No Audio**: Audio tracks have been excluded to focus exclusively on visual content.
 4. **File Naming Convention**: `<CLIP_NR>_<VIDEO_NR>_<ID_FROM_URL>.ext` (e.g., `0_17_19F3A652-3AA-0032A-00000B64-19F2B6C5.webm`)
@@ -46,7 +53,7 @@ FM-V2T/
     ```
   - German translations produced using the [No Language Left Behind (NLLB)](https://ai.meta.com/research/no-language-left-behind/) model and manually refined.
 - **Summary Descriptions**:
-  - "gold_caption": 21 manually refined short captions created in the style of the [MSR-VTT](https://cove.thecvf.com/datasets/839) format, derived from detailed annotations using [ChatGPT](https://chatgpt.com/) with the prompt:
+  - "gold_caption": 20 manually refined short captions created in the style of the [MSR-VTT](https://cove.thecvf.com/datasets/839) format, derived from detailed annotations using [ChatGPT](https://chatgpt.com/) with the prompt:
     ```
     I will give you a video caption and you have to extract the most important information into a short 10 word description and make different variations of the "pred_caption". These "gold_caption" are variations of the "pred_caption" and have the same meaning and maybe focus on a few other details from the original video caption and are all formulated in other words but without inventing any other details that where not in the original video caption. So similar like in the MSR_VTT dataset. 
     Here this is a example please also stay in this json format :
