@@ -1,16 +1,15 @@
 # FM-V2T Dataset: FAIRmedia English and German Video-to-Text (V2T) Annotations
 
-## Overview
-This dataset has been developed by [**JOANNEUM RESEARCH DIGITAL**](https://www.joanneum.at/digital/en/) as part of a collaborative research project. It contains short video clips derived from publicly available video sources with detailed annotations in English and German which are designed for tasks involving video-to-text (V2T) modeling and evaluation. The video captions specifically focus on long video descriptions which are tailored to LLM-based V2T methods, solely relying on visual inputs. For a brief video overview of the dataset creation process, visit the [**FAIRmedia**](https://www.joanneum.at/digital/projekte/fairmedia/) project website.
-
 ## Publication: ACM Multimedia 2025
 The **FM-V2T Dataset** is published alongside our paper  
 [**A Dataset and Metric for Textual Video Content Description**](https://doi.org/10.1145/3746027.3758224)  
 (see [alternative link](https://zenodo.org/records/17287642))  
 appearing in the *Proceedings of the 33rd ACM International Conference on Multimedia (ACM MM 2025)*.
 
-
 This publication introduces both the dataset and a dedicated **LLM-based semantic correspondence metric** designed for evaluating video-to-text models.
+
+## Overview
+This dataset has been developed by [**JOANNEUM RESEARCH DIGITAL**](https://www.joanneum.at/digital/en/) as part of a collaborative research project. It contains short video clips derived from publicly available video sources with detailed annotations in English and German which are designed for tasks involving video-to-text (V2T) modeling and evaluation. The video captions specifically focus on long video descriptions which are tailored to LLM-based V2T methods, solely relying on visual inputs. For a brief video overview of the dataset creation process, visit the [**FAIRmedia**](https://www.joanneum.at/digital/projekte/fairmedia/) project website.
 
 ### Key Features
 1. **Clips**: 258 manually curated short video clips, typically under 30 seconds, extracted using the [VidiCert](https://www.vidicert.com/) shot boundary detector.
@@ -48,12 +47,12 @@ FM-V2T/
 
 ## Annotation Details
 - **Detailed Descriptions**:
-  - English descriptions generated using [VideoLLama2](https://github.com/DAMO-NLP-SG/Video-LLaMA) and [InternLM-XComposer-2.5](https://github.com/InternLM/InternLM-XComposer) with a 200-word prompt:
+  - English descriptions are manually corrected after pre-describing videos using [VideoLLama2](https://github.com/DAMO-NLP-SG/Video-LLaMA) and [InternLM-XComposer-2.5](https://github.com/InternLM/InternLM-XComposer) with a 200-word prompt:
     <!-- PromptID = 18 -->
     ```
     Describe this video, exactly and only focus on what is visible, without imagining any details that are not visible! Answer what can be seen, where the video was shot, what persons, animals or buildings etc. can be seen. What is happening in the video? When was the video filmed at day or night for example ... Is there something unique to this video? Limit the description to 200 words!
     ```
-  - German translations produced using the [No Language Left Behind (NLLB)](https://ai.meta.com/research/no-language-left-behind/) and [Llama 3.1 8B Instruct](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct) model with manually aggregation and revison.
+  - German translations are manually revised after producing proposal-translations using [No Language Left Behind (NLLB)](https://ai.meta.com/research/no-language-left-behind/) and [Llama 3.1 8B Instruct](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct).
 - **Summary Descriptions**:
   - "gold_caption": 20 manually refined short captions created in the style of the [MSR-VTT](https://cove.thecvf.com/datasets/839) format, derived from detailed annotations using [ChatGPT](https://chatgpt.com/) with the prompt:
     ```
