@@ -20,7 +20,7 @@ This publication introduces both the dataset and a dedicated **LLM-based semanti
    - **Median Length**: 13.63 seconds.
    - **STD of Length**: 7.79 seconds.
 2. **Annotations**:
-   - **Detailed Long Descriptions**: Generated using the [VideoLLama2](https://github.com/DAMO-NLP-SG/Video-LLaMA) V2T model and manually corrected for quality.
+   - **Detailed Long Descriptions**: Generated using the [VideoLLama2](https://github.com/DAMO-NLP-SG/Video-LLaMA) and [InternLM-XComposer-2.5](https://github.com/InternLM/InternLM-XComposer) V2T models with manual correction for quality.
    - **Multiple Short Summary Descriptions**: Extracted 20 short single-sentence descriptions from detailed long descriptions using [ChatGPT](https://chatgpt.com/), formatted for [MSR-VTT](https://cove.thecvf.com/datasets/839) compatibility.
    - **Bilingual**: Long descriptions are available in English and German, with translations refined manually.
 3. **No Audio**: Audio tracks have been excluded to focus exclusively on visual content.
@@ -48,12 +48,12 @@ FM-V2T/
 
 ## Annotation Details
 - **Detailed Descriptions**:
-  - English descriptions generated using [VideoLLama2](https://github.com/DAMO-NLP-SG/Video-LLaMA) with a 200-word prompt:
+  - English descriptions generated using [VideoLLama2](https://github.com/DAMO-NLP-SG/Video-LLaMA) and [InternLM-XComposer-2.5](https://github.com/InternLM/InternLM-XComposer) with a 200-word prompt:
     <!-- PromptID = 18 -->
     ```
     Describe this video, exactly and only focus on what is visible, without imagining any details that are not visible! Answer what can be seen, where the video was shot, what persons, animals or buildings etc. can be seen. What is happening in the video? When was the video filmed at day or night for example ... Is there something unique to this video? Limit the description to 200 words!
     ```
-  - German translations produced using the [No Language Left Behind (NLLB)](https://ai.meta.com/research/no-language-left-behind/) model and manually refined.
+  - German translations produced using the [No Language Left Behind (NLLB)](https://ai.meta.com/research/no-language-left-behind/) and [Llama 3.1 8B Instruct](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct) model with manually aggregation and revison.
 - **Summary Descriptions**:
   - "gold_caption": 20 manually refined short captions created in the style of the [MSR-VTT](https://cove.thecvf.com/datasets/839) format, derived from detailed annotations using [ChatGPT](https://chatgpt.com/) with the prompt:
     ```
