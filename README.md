@@ -5,8 +5,10 @@ This dataset has been developed by [**JOANNEUM RESEARCH DIGITAL**](https://www.j
 
 ## Publication: ACM Multimedia 2025
 The **FM-V2T Dataset** is published alongside our paper  
-[**A Dataset and Metric for Textual Video Content Description**](https://doi.org/10.1145/3746027.3758224),  
+[**A Dataset and Metric for Textual Video Content Description**](https://doi.org/10.1145/3746027.3758224)  
+(see [alternative link](https://zenodo.org/records/17287642))  
 appearing in the *Proceedings of the 33rd ACM International Conference on Multimedia (ACM MM 2025)*.
+
 
 This publication introduces both the dataset and a dedicated **LLM-based semantic correspondence metric** designed for evaluating video-to-text models.
 
