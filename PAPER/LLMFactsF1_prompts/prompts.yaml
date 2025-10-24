@@ -1,0 +1,58 @@
+PROMPTS_LIB: {
+    "PROMPT FACT EXTRACTION" : {
+        intention: "facts-extraction",
+        system_prompt: "You are a helpful AI Assistant.",
+        user_prompt: "Bellow is a description of a video clip:\nVideo Description: {text1}\n\nExtract key facts from the above video description paragraph.\n \
+        - Each fact should contain a subject, predicate, and object. Optionally include context such as time, place, and causality when relevant (e.g., where, when, why an action occurs).\n \
+        - Ensure facts capture modalities (e.g., 'could', 'might'), negations, and quantifiers (e.g., 'all', 'some') if present in the video description.\n \
+        - Facts should be atomic, meaning that they cannot be further split into multiple simpler facts.\n \
+        - Pronouns must be substituted by the corresponding nouns.\n \
+        - Avoid redundant or overlapping facts, ensuring each fact is unique.\n \
+        - Scene cuts, camera motions, and purely technical details are NOT facts, but gestures, facial expressions, and actions that carry meaning ARE facts.\n \
+        - Implicit aspects such as 'The video starts.' or 'The video ends.' are NOT facts.\n \
+        - The number of facts extracted should dynamically depend on the complexity of the video description. Extract as many key facts as necessary to fully capture the relevant information.\n\n \
+        Please generate the response in the form of a Python dictionary string with keys \"facts\". Each fact must include its index in the format:\n \
+        {\n \
+        \"fact_index\": index_number, \"fact\": \"copy the fact here\"\n \
+        }\n\n \
+        DO NOT PROVIDE ANY OTHER OUTPUT TEXT OR EXPLANATION. Only provide the VALID Python dictionary string.\nFor example, your response should look like this: {{'facts': [{{'fact_index': 1, 'fact': 'Fact 1 description.'}}, {{'fact_index': 2, 'fact': 'Fact 2 description.'}}, ...]}}",
+    },
+
+    "PROMPT FACT ALIGNMENT" : {
+        intention: "facts-alignment-collective",
+        system_prompt: "You are a helpful AI Assistant.",
+        user_prompt: "Given a video description of paragraph length (200 words limit) and a list of key facts, classify the relationship between the video description and each fact into one of three classes: entailment, neutral, or contradiction.\n \
+        Definitions:\n \
+        - 'entailment' means the video description either directly supports or logically implies the key fact to a high degree. It can include explicit mentions or logical inferences.\n \
+        - 'contradiction' means the key fact is logically incompatible with the video description, or directly contradicted by something described.\n \
+        - 'neutral' means the video description is neither 'entailment' nor 'contradiction'. This includes cases where the fact is outside the scope or ambiguous in relation to the video description.\n\n \
+        Additional instructions:\n \
+        - If unsure or ambiguous, classify as 'neutral' and provide reasoning for ambiguity.\n \
+        - Reference specific parts of the video description as evidence when explaining your classification for entailment or contradiction.\n \
+        - Every key fact must be classified. Do not skip any facts, even if they seem unrelated.\n \
+        - Maintain the order of the key facts as presented.\n \
+        - The reasoning for each classification should be concise but specific, using evidence from the video description.\n\n \
+        Video Description:\n{text1}\n\n \
+        Key facts: {text2}\n \
+        Output a python dictionary string formed as:\n \
+        {\n \
+        \"fact_relationships\": [\n \
+            {\"fact_index\": index_number, \"fact\": \"copy the fact here\", \"relationship\": \"only choose between 'entailment', 'contradiction' or 'neutral'\", \"reason\": \"give your reason here, reference part of the description, 'names' only within these quotes\"},\n \
+            ...\n \
+        ]\n \
+        }\n\n \
+        DO NOT PROVIDE ANY OTHER OUTPUT TEXT OR EXPLANATION. Ignore any quotes or special characters within these specific text fields. Only output the valid python dictionary string. Output:",
+    },
+
+    "PROMPT SYNTAX CORRECTION": {
+        intention: "dictionary-syntax-correction",
+        system_prompt: 
+        "You are a precise and methodical AI assistant designed to correct syntax errors in Python-like dictionary strings. 
+        Your goal is to convert an invalid dictionary string into a valid one. 
+        Only adjust quotes, brackets, braces, commas, and other syntactic elements as necessary. 
+        Do not add or remove data fields or alter text content beyond what is required to ensure a valid Python dictionary.
+        ",
+        user_prompt:
+        "Can you please fix the python dict: \n\n {text1}\n\n Only output the fixed dict, no other descriptions, such that i can directly parse it. No ```python``` at the beginning or end.",
+        }
+}

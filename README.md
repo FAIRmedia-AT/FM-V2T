@@ -6,7 +6,7 @@ The **FM-V2T Dataset** is published alongside our paper
 (see [alternative link](https://zenodo.org/records/17287642))  
 appearing in the *Proceedings of the 33rd ACM International Conference on Multimedia (ACM MM 2025)*.
 
-This publication introduces both the dataset and a dedicated **LLM-based semantic correspondence metric** designed for evaluating video-to-text models.
+This publication introduces both the dataset and a dedicated **LLM-based semantic correspondence metric** designed for evaluating video-to-text models. The prompts used for LLMFactsF1 can be found at `PAPER/LLMFactsF1_prompts`
 
 ### Updated Results
 Revising the dataset, we discovered a minor issue with the **ShortRefs** counting 21 captions for each clip instead of the expected 20. The **updated results 🟩** show very marginal differences and appear just below the *inaccurate results 🟥* for comparison. For completeness, the outdated file is archived in `annotations/archive/clips-wvr-msr-vtt-format_21.json`.
@@ -139,6 +139,8 @@ During our initial tests with LLM-based Video-to-Text methods, we identified key
 | 132_6_1CF81A56-384-00054-000003E4-1CF61C1D.mp4 | Gold mining
 | 264_9_1F1F7234-1E3-00174-000061A1-1F1E8EAD.mp4 | Paraglider
 | 6_13_19F500FE-1F5-00249-000007D8-19F40846.mp4 | Train station
+
+## 
 
 
 ## Contact
