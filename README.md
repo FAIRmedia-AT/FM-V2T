@@ -8,6 +8,23 @@ appearing in the *Proceedings of the 33rd ACM International Conference on Multim
 
 This publication introduces both the dataset and a dedicated **LLM-based semantic correspondence metric** designed for evaluating video-to-text models.
 
+### Updated Results
+Revising the dataset, we discovered a minor issue with the **ShortRefs** counting 21 captions for each clip instead of the expected 20. The **updated results 🟩** show very marginal differences and appear just below the *inaccurate results 🟥* for comparison. For completeness, the outdated file is archived in `annotations/archive/clips-wvr-msr-vtt-format_21.json`.
+
+| Model        | Ref        | Pred      | Words     | LLMFactsF1     | METEOR        | BLEU-1        | BLEU-2        | ROUGE-L       | CosPar        | CosSent       |
+|---------------|-------------|-----------|------------|----------------|----------------|----------------|----------------|----------------|----------------|----------------|
+| VideoLLama    | Ref         | Long-200  | 148±31     | 0.496±0.146    | 0.212±0.035    | 0.390±0.091    | 0.245±0.073    | 0.296±0.052    | 0.751±0.113    | 0.670±0.087    |
+| InternLM      | Ref         | Long-200  | 136±22     | 0.529±0.184    | 0.198±0.047    | 0.380±0.085    | 0.223±0.083    | 0.283±0.072    | 0.711±0.112    | 0.648±0.099    |
+| Tarsier       | Ref         | Long-200  | 59±14      | 0.476±0.175    | 0.135±0.032    | 0.257±0.107    | 0.150±0.069    | 0.257±0.047    | 0.771±0.092    | 0.644±0.094    |
+| InternLM      | Ref         | Medium-50 | 61±22      | 0.508±0.186    | 0.129±0.044    | 0.248±0.125    | 0.142±0.086    | 0.246±0.065    | 0.729±0.108    | 0.640±0.101    |
+| InternLM      | Ref         | Short-25  | 49±30      | 0.473±0.207    | 0.106±0.051    | 0.173±0.153    | 0.097±0.092    | 0.205±0.072    | 0.682±0.125    | 0.653±0.116    |
+| InternLM      | Ref         | Brief-10  | 10±3       | 0.431±0.230    | 0.033±0.015    | 0.002±0.014    | 0.001±0.007    | 0.085±0.034    | 0.629±0.121    | 0.686±0.124    |
+| 🟥 *InternLM*  | *ShortRefs-21* | *Brief-10* | *10±3* | *-* | *0.213±0.076* | *0.720±0.182* | *0.450±0.226* | *0.415±0.144* | *-* | *-* |
+| 🟩 **InternLM** | **ShortRefs** | **Brief-10** | **10±3** | **-** | **0.213±0.077** | **0.717±0.183** | **0.444±0.227** | **0.413±0.145** | **-** | **-** |
+| 🟥 *Tarsier*   | *ShortRefs-21* | *Brief-10* | *20±35* | *-* | *0.204±0.067* | *0.588±0.158* | *0.350±0.181* | *0.372±0.120* | *-* | *-* |
+| 🟩 **Tarsier** | **ShortRefs** | **Brief-10** | **20±35** | **-** | **0.204±0.066** | **0.590±0.160** | **0.353±0.183** | **0.373±0.120** | **-** | **-** |
+
+
 ## Overview
 This dataset has been developed by [**JOANNEUM RESEARCH DIGITAL**](https://www.joanneum.at/digital/en/) as part of a collaborative research project. It contains short video clips derived from publicly available video sources with detailed annotations in English and German which are designed for tasks involving video-to-text (V2T) modeling and evaluation. The video captions specifically focus on long video descriptions which are tailored to LLM-based V2T methods, solely relying on visual inputs. For a brief video overview of the dataset creation process, visit the [**FAIRmedia**](https://www.joanneum.at/digital/projekte/fairmedia/) project website.
 
@@ -19,7 +36,7 @@ This dataset has been developed by [**JOANNEUM RESEARCH DIGITAL**](https://www.j
    - **Median Length**: 13.63 seconds.
    - **STD of Length**: 7.79 seconds.
 2. **Annotations**:
-   - **Detailed Long Descriptions**: Generated using the [VideoLLama2](https://github.com/DAMO-NLP-SG/Video-LLaMA) and [InternLM-XComposer-2.5](https://github.com/InternLM/InternLM-XComposer) V2T models with manual correction for quality.
+   - **Detailed Long Descriptions**: Generated using the [VideoLLama2](https://github.com/DAMO-NLP-SG/Video-LLaMA) V2T model with manual correction for quality.
    - **Multiple Short Summary Descriptions**: Extracted 20 short single-sentence descriptions from detailed long descriptions using [ChatGPT](https://chatgpt.com/), formatted for [MSR-VTT](https://cove.thecvf.com/datasets/839) compatibility.
    - **Bilingual**: Long descriptions are available in English and German, with translations refined manually.
 3. **No Audio**: Audio tracks have been excluded to focus exclusively on visual content.
@@ -47,12 +64,12 @@ FM-V2T/
 
 ## Annotation Details
 - **Detailed Descriptions**:
-  - English descriptions are manually corrected after pre-describing videos using [VideoLLama2](https://github.com/DAMO-NLP-SG/Video-LLaMA) and [InternLM-XComposer-2.5](https://github.com/InternLM/InternLM-XComposer) with a 200-word prompt:
+  - English descriptions are manually corrected after pre-describing videos using [VideoLLama2](https://github.com/DAMO-NLP-SG/Video-LLaMA) with a 200-word prompt:
     <!-- PromptID = 18 -->
     ```
     Describe this video, exactly and only focus on what is visible, without imagining any details that are not visible! Answer what can be seen, where the video was shot, what persons, animals or buildings etc. can be seen. What is happening in the video? When was the video filmed at day or night for example ... Is there something unique to this video? Limit the description to 200 words!
     ```
-  - German translations are manually revised after producing proposal-translations using [No Language Left Behind (NLLB)](https://ai.meta.com/research/no-language-left-behind/) and [Llama 3.1 8B Instruct](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct).
+  - German translations are manually revised after producing proposal-translations using [No Language Left Behind (NLLB)](https://ai.meta.com/research/no-language-left-behind/).
 - **Summary Descriptions**:
   - "gold_caption": 20 manually refined short captions created in the style of the [MSR-VTT](https://cove.thecvf.com/datasets/839) format, derived from detailed annotations using [ChatGPT](https://chatgpt.com/) with the prompt:
     ```
